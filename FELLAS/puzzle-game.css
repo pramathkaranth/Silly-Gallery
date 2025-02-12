@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #ff3385;
+}
+
+.puzzle-container {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 5px;
+    margin: 20px auto;
+    width: 420px;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.piece {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ff3385;
+    cursor: grab;
+    background-size: 400px 400px;
+    background-repeat: no-repeat;
+}
+
+button {
+    background: linear-gradient(135deg, #ff66b2, #ff3385);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ff3385, #ff0055);
+}
+
+#message {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff3385;
+    margin-top: 10px;
+}
+/* Win Overlay - Fullscreen */
+#win-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-size: 3em;
+    text-align: center;
+    z-index: 10;
+    animation: fadeIn 1s ease-in-out;
+}
+
+#win-text {
+    font-size: 4em;
+    font-weight: bold;
+    text-shadow: 0 0 10px #ff0, 0 0 20px #ff0, 0 0 30px #f90;
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ff0, 0 0 20px #ff0; }
+    to { text-shadow: 0 0 20px #ff0, 0 0 40px #f90; }
+}
+
+/* Restart Button */
+#restart-button {
+    background: #ff6600;
+    color: white;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#restart-button:hover {
+    background: #ff3300;
+    transform: scale(1.1);
+}
+
+/* Big Confetti */
+.big-confetti {
+    width: 15px;
+    height: 15px;
+    background-color: hsl(calc(360 * var(--random)), 100%, 50%);
+    position: absolute;
+    top: -10px;
+    animation: fall linear forwards;
+    transform: rotate(45deg);
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}

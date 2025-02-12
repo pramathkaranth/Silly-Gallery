@@ -1,3 +1,4 @@
+/* General Styling */
 body {
     background: linear-gradient(135deg, #ff9a9e, #fad0c4);
     text-align: center;
@@ -5,69 +6,77 @@ body {
     color: #ff66b2;
     margin: 0;
     padding: 0;
+}
+
+/* Navigation Bar */
+.navbar {
+    background: #ff66b2;
+    padding: 10px 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.container {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    width: 90%;
-    text-align: center;
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    animation: bounce 1.5s infinite;
+.navbar ul li {
+    position: relative;
 }
 
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    font-size: 1.2em;
+    transition: background 0.3s;
+}
+
+.navbar ul li a:hover {
+    background: #ff3385;
+}
+
+/* Dropdown Styling */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #ff3385;
+    min-width: 180px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px;
+    display: block;
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Main Content */
+.main-content {
+    margin-top: 50px;
 }
 
 .bestie-image {
-    width: 225px;          /* Increased size */
-    height: 300px;         /* Keep aspect ratio */
-    object-fit: cover;     /* Ensures the image covers the area without stretching */
-    border: 2px solid #ff66b2; /* Cute border for a frame effect */
+    width: 225px;
+    height: 300px;
+    object-fit: cover;
+    border: 2px solid #ff66b2;
     border-radius: 15px;
     margin-bottom: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
-
-button {
-    background: linear-gradient(135deg, #ff66b2, #ff3385);
-    border: none;
-    color: white;
-    padding: 10px 15px; /* Reduced size */
-    font-size: 1em; /* Reduced font size */
-    border-radius: 20px; /* Slightly smaller */
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-button:hover {
-    background: linear-gradient(135deg, #ff3385, #ff0055);
-    transform: scale(1.05);
-}
-
-.quote {
-    margin-top: 20px;
-    font-size: 1.5em;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    color: #ff3385;
-    font-weight: bold;
 }
